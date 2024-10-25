@@ -1,12 +1,13 @@
 // src/services/api.js
 import axios from 'axios';
 
-const API_URL = 'http://127.0.0.1:8000/api'; // Your Django backend URL
+const AUTH_URL = 'http://127.0.0.1:8000/auth'; // Authentication base URL
+const API_URL = 'http://127.0.0.1:8000/api'; // API base URL for birthdays
 
 // Function to register a new user
 export const registerUser = async (userData) => {
     try {
-        const response = await axios.post(`${API_URL}/auth/register/`, userData);
+        const response = await axios.post(`${AUTH_URL}/registration/`, userData);
         return response.data; // Returns the user data from the response
     } catch (error) {
         throw error.response.data; // Customize this based on your needs
@@ -16,7 +17,7 @@ export const registerUser = async (userData) => {
 // Function to log in a user
 export const loginUser = async (credentials) => {
     try {
-        const response = await axios.post(`${API_URL}/auth/login/`, credentials);
+        const response = await axios.post(`${AUTH_URL}/login/`, credentials);
         return response.data; // Returns the token or user data from the response
     } catch (error) {
         throw error.response.data; // Handle the error response
@@ -71,4 +72,3 @@ export const deleteBirthday = async (birthdayId, token) => {
     }
 };
 
-// Export any additional functions as needed
