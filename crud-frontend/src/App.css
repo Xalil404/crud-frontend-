@@ -1,0 +1,42 @@
+.dashboard-background {
+    font-family: Arial, sans-serif;
+    background-image: url("https://res.cloudinary.com/dnbbm9vzi/image/upload/v1729523537/pexels-codioful-7135068_el85gv.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.sidebar {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    padding-top: 20px;
+  
+    background-color: rgba(255, 255, 255, 0.7); /* White background with 80% opacity */
+    backdrop-filter: blur(5px); /* Optional: Adds a blur effect behind the sidebar */
+    /* You can also add a transition for smoothness */
+    transition: background-color 0.3s ease;
+    border-right: 5px solid #dee2e6;
+}
+
+.sidebar-heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.nav-link {
+    margin: 5px 0;
+}
+  
+
+.nav-link:hover {
+    background-color: #e2e6ea; /* Light gray on hover */
+    border-radius: 15px;
+}
+
+
+.divider {
+    border: none; /* Remove default border */
+    border-top: 2px solid #000000; /* Adjust color and thickness as needed */
+    margin: 5px 0; /* Space above and below the divider */
+}

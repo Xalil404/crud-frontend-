@@ -43,14 +43,33 @@ const Header = () => {
                     </div>
 
                     {/* Sign In and Sign Up Buttons (Top Right) */}
-                    <div className="d-flex order-2 order-lg-3">
+                    <div className="d-flex order-2 order-lg-3 align-items-center gap-3">
                         {!isAuthenticated && (
                             <>
-                                <Link className="nav-link d-none d-lg-block text-dark" to="/login">Sign in</Link>
-                                <Link className="nav-link btn btn-sm rounded-pill px-4 me-2" style={{ backgroundColor: '#E8BF73', color: 'black' }} to="/register">Get Started</Link>
+                                <Link
+                                    className="nav-link d-none d-lg-block text-dark"
+                                    style={{ marginRight: '10px' }}
+                                    to="/login"
+                                >
+                                    Sign in
+                                </Link>
+                                <Link
+                                    className="nav-link btn btn-sm rounded-pill px-4"
+                                    style={{
+                                        backgroundColor: '#E8BF73',
+                                        color: 'black',
+                                        padding: '10px 20px', // Increase padding for larger button
+                                        marginRight: '10px',
+                                        marginLeft: '5px',
+                                    }}
+                                    to="/register"
+                                >
+                                    Get Started
+                                </Link>
                             </>
                         )}
                     </div>
+
                 </div>
             </nav>
         </div>
