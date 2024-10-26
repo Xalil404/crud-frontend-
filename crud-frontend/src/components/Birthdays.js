@@ -84,11 +84,12 @@ const Birthdays = () => {
         }
     };
 
+    // In your component where the logout button is defined
     const handleLogout = () => {
-        localStorage.removeItem('authToken'); // Remove token from local storage
-        localStorage.removeItem('user'); // Optionally remove user
-        navigate('/'); // Redirect to the home page
+        // Redirect to the Logout component
+        navigate('/logout');
     };
+
 
     return (
         <div>
