@@ -1,6 +1,11 @@
 .dashboard-background {
-    font-family: Arial, sans-serif;
     background-image: url("https://res.cloudinary.com/dnbbm9vzi/image/upload/v1729523537/pexels-codioful-7135068_el85gv.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.dashboard-background-bday {
+    background-image: url("https://res.cloudinary.com/dnbbm9vzi/image/upload/v1729521385/pexels-codioful-7130498_yxghjx.jpg");
     background-repeat: repeat;
     background-size: cover;
 }
@@ -16,6 +21,10 @@
     /* You can also add a transition for smoothness */
     transition: background-color 0.3s ease;
     border-right: 5px solid #dee2e6;
+}
+
+.sidebar-user-info {
+    padding-top: 200px;
 }
 
 .sidebar-heading {

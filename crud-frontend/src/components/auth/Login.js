@@ -24,7 +24,7 @@ const Login = () => {
             console.log('Token saved:', response.token); // Verify token saved
     
             // Redirect to the birthdays page
-            navigate('/birthdays'); 
+            navigate('/dashboard'); 
         } catch (error) {
             const errorMessage = error.non_field_errors ? error.non_field_errors[0] : 'Login failed. Please try again.';
             setError(errorMessage);

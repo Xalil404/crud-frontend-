@@ -14,7 +14,7 @@ const Logout = () => {
 
     // Handle the cancel action, which takes the user back to the previous page
     const handleCancel = () => {
-        navigate('/birthdays'); // Go back to the previous page
+        navigate('/dashboard'); // Go back to the previous page
     };
 
     return (
