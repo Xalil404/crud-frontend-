@@ -17,21 +17,22 @@ const Login = () => {
     
         try {
             const response = await loginUser({ email, password });
-            console.log(response); // Handle success (e.g., save token)
-
-            // Assuming the response contains the token
-            localStorage.setItem('authToken', response.token); // Save the token to local storage
-            
+            console.log('Token received:', response.token); // Verify token received
+    
+            // Save the token to local storage
+            localStorage.setItem('authToken', response.token); 
+            console.log('Token saved:', response.token); // Verify token saved
+    
             // Redirect to the birthdays page
-            navigate('/birthdays'); // Use navigate to redirect to the birthdays page
+            navigate('/birthdays'); 
         } catch (error) {
-            // Check if there's an error object and extract the first error message if available
             const errorMessage = error.non_field_errors ? error.non_field_errors[0] : 'Login failed. Please try again.';
             setError(errorMessage);
         } finally {
             setLoading(false);
         }
     };
+    
     
 
     return (

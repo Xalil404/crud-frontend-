@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
-import { fetchBirthdays, createBirthday, updateBirthday, deleteBirthday } from '../services/api'; // Import from api.js
+import { fetchBirthdays, createBirthday, updateBirthday, deleteBirthday, fetchUserProfile } from '../services/api'; // Import from api.js
 
 const Birthdays = () => {
     const [birthdays, setBirthdays] = useState([]);
@@ -8,23 +8,29 @@ const Birthdays = () => {
     const [date, setDate] = useState('');
     const [editId, setEditId] = useState(null);
     const [error, setError] = useState(null); // To store any error messages
+    const [userProfile, setUserProfile] = useState(null); // State to store user profile
     const token = localStorage.getItem('authToken'); // Retrieve token from local storage
     const navigate = useNavigate(); // Initialize navigate function
-    const userId = localStorage.getItem('userId'); // Retrieve user ID from local storage
+    
 
-    // Load birthdays when the component mounts
+    // Load user profile and birthdays when the component mounts
     useEffect(() => {
-        const loadBirthdays = async () => {
+        const loadProfileAndBirthdays = async () => {
             try {
-                const data = await fetchBirthdays(token); // Pass token to the fetch function
-                setBirthdays(data);
+                // Fetch user profile
+                const profileData = await fetchUserProfile(token);
+                setUserProfile(profileData); // Set user profile
+
+                // Fetch birthdays
+                const birthdayData = await fetchBirthdays(token);
+                setBirthdays(birthdayData); // Set birthdays
             } catch (err) {
-                setError(err.detail || 'Error fetching birthdays');
-                console.error('Error fetching birthdays:', err);
+                setError(err.detail || 'Error fetching data');
+                console.error('Error fetching data:', err);
             }
         };
 
-        loadBirthdays(); // Call the fetch function when component mounts
+        loadProfileAndBirthdays(); // Call the fetch function when component mounts
     }, [token]); // Dependencies: token
 
     const handleSubmit = async (e) => {
@@ -33,7 +39,7 @@ const Birthdays = () => {
         
         // Prepare birthday data with user ID
         const birthdayData = {
-            user: userId, // Ensure this is set to the correct user ID
+            user: userProfile ? userProfile.id : null, // Convert userId to an integer
             description: name, // Use `description` for name
             date: date // Ensure this date is in the correct format (YYYY-MM-DD)
         };
@@ -80,13 +86,14 @@ const Birthdays = () => {
 
     const handleLogout = () => {
         localStorage.removeItem('authToken'); // Remove token from local storage
-        localStorage.removeItem('userId'); // Optionally remove userId
+        localStorage.removeItem('user'); // Optionally remove user
         navigate('/'); // Redirect to the home page
     };
 
     return (
         <div>
             <h2>Birthdays</h2>
+            {userProfile && <h3>Welcome, {userProfile.username}! (ID: {userProfile.id})</h3>} {/* Show user's name */}
             {error && <div style={{ color: 'red' }}>{error}</div>} {/* Show error messages */}
             <button onClick={handleLogout} style={{ marginBottom: '10px' }}>Logout</button> {/* Logout button */}
             <form onSubmit={handleSubmit}>
@@ -123,4 +130,3 @@ const Birthdays = () => {
 };
 
 export default Birthdays;
-
