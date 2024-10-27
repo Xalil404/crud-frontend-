@@ -44,15 +44,16 @@ const Login = () => {
                 {/* Right Column for Login Form */}
                 <div className="col-md-6">
                     <div className="card" style={{ border: 'none' }}>
-                        <div className="card-header text-center card-header-custom">
+                        <div className="card-header-a text-center card-header-custom">
                             <h2>Sign in to Dates</h2>
                         </div>
+
                         <div className="card-body">
                             {/* Social Media Login Buttons */}
-                            <div className="social-login-buttons text-center mb-3">
+                            <div className="social-login-buttons text-center mb-5">
                                 <button
                                     type="button"
-                                    className="btn btn-danger btn-block mb-4"
+                                    className="btn btn-danger mb-4 w-100 py-3 mx-auto d-block rounded-button"
                                     onClick={() => navigate('/auth/google')}
                                 >
                                     <i className="fab fa-google"></i> Login with Google
@@ -61,10 +62,13 @@ const Login = () => {
 
                             {/* Divider with text */}
                             <div className="text-center mb-5">
-                                <div className="divider">
-                                    <span className="divider-text">or sign in with email</span>
+                                <div className="divider-login">
+                                    <hr className="divider-line" />
+                                    <span className="divider-text mx-2">or sign in with email</span>
+                                    <hr className="divider-line" />
                                 </div>
                             </div>
+
 
                             {/* Login Form */}
                             <form onSubmit={handleSubmit}>
@@ -87,7 +91,7 @@ const Login = () => {
                                 <div className="social-login-buttons">
                                     <button
                                         type="submit"
-                                        className="btn btn-lg mx-auto d-block"
+                                        className="btn btn-lg mx-auto d-block w-100 py-3 rounded-button"
                                         style={{ backgroundColor: '#E8BF73', color: 'black' }}
                                         disabled={loading}
                                     >

@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import VerifyEmail from './components/auth/VerifyEmail';
 import Birthdays from './components/Birthdays';
 import Dashboard from './components/Dashboard';
 import Logout from './components/auth/Logout'; // Import the Logout component
@@ -20,6 +21,7 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/verify-email" element={<VerifyEmail />} />
                 <Route 
                     path="/birthdays" 
                     element={

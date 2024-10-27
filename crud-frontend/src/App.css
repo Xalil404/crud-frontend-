@@ -49,3 +49,28 @@
     border-top: 2px solid #000000; /* Adjust color and thickness as needed */
     margin: 5px 0; /* Space above and below the divider */
 }
+
+
+/*                                                               All auth */
+/* Login page */
+.rounded-button {
+    border-radius: 15px; /* Adjust the value as needed */
+}
+
+.divider-login {
+    display: flex;
+    align-items: center; /* Center align the text vertically */
+}
+
+.divider-line {
+    flex: 1; /* Make the line take up available space */
+    border: none; /* Remove default border */
+    height: 1px; /* Set the height of the line */
+    background-color: #212529; /* Set the color of the line */
+}
+
+.divider-text {
+    padding: 0 10px; /* Add some padding on the sides of the text */
+}
+
+
