@@ -54,7 +54,7 @@ const Login = () => {
                                 <button
                                     type="button"
                                     className="btn btn-danger mb-4 w-100 py-3 mx-auto d-block rounded-button"
-                                    onClick={() => navigate('/auth/google')}
+                                    onClick={() => navigate('/accounts/google/login/')}
                                 >
                                     <i className="fab fa-google"></i> Login with Google
                                 </button>

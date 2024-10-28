@@ -47,7 +47,7 @@ const Register = () => {
                             <form onSubmit={handleSubmit}>
                                 {/* Social Media Login Buttons */}
                                 <div className="social-login-buttons text-center mb-3">
-                                    <a href="/auth/google" type="button" className="btn btn-danger mb-4 w-100 py-3 mx-auto d-block rounded-button">
+                                    <a href="/accounts/google/login/" type="button" className="btn btn-danger mb-4 w-100 py-3 mx-auto d-block rounded-button">
                                         <i className="fab fa-google"></i> Sign up with Google
                                     </a>
                                 </div>
