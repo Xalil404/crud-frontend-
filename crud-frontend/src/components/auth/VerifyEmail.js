@@ -21,10 +21,9 @@ const VerifyEmail = () => {
                         </div>
                         <div className="card-body">
                             <p className="text-center">
-                                We have sent an email to you for verification. <br />
-                                Follow the link provided to finalize the signup process. <br />
-                                If you do not see the verification email in your main inbox, check your spam folder. <br />
-                                Please contact us if you do not receive the verification email within a few minutes.
+                                Congratulations on creating your account. <br />
+                                You are now ready to access your account. <br />
+                                Please click the button below and procceed to logging into your account. <br />
                             </p>
                         </div>
                         <div className="text-center">
