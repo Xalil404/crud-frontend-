@@ -44,21 +44,22 @@ const Dashboard = () => {
                     <nav className="col-md-2 d-none d-md-block sidebar">
                         <h2 className="sidebar-heading text-center">Menu</h2>
                         <ul className="nav flex-column">
+                        <hr className="divider" />
                             <li className="nav-item">
-                                <Link className="nav-link"
+                                <Link className="nav-link text-dark"
                                  to="/dashboard">Dashboard</Link>
                             </li>
                             <hr className="divider" />
                             <li className="nav-item">
-                                <Link className="nav-link" to="/birthdays">Birthdays</Link>
+                                <Link className="nav-link text-dark" to="/birthdays">Birthdays</Link>
                             </li>
                             <hr className="divider" />
                             <li className="nav-item">
-                                <Link className="nav-link" to="/anniversaries">Anniversaries</Link>
+                                <Link className="nav-link text-dark" to="/anniversaries">Anniversaries</Link>
                             </li>
                             <hr className="divider" />
                             <li className="nav-item">
-                                <Link className="nav-link" to="/holidays">Holidays</Link>
+                                <Link className="nav-link text-dark" to="/holidays">Holidays</Link>
                             </li>
                             <hr className="divider" />
                         </ul>
