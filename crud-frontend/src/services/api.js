@@ -1,8 +1,8 @@
 // src/services/api.js
 import axios from 'axios';
 
-const AUTH_URL = 'http://127.0.0.1:8000/auth'; // Authentication base URL
-const API_URL = 'http://127.0.0.1:8000/api'; // API base URL for birthdays
+const AUTH_URL = 'http://crud-backend-for-react-841cbc3a6949.herokuapp.com/auth'; // Authentication base URL
+const API_URL = 'http://crud-backend-for-react-841cbc3a6949.herokuapp.com/api'; // API base URL for birthdays
 
 
 
