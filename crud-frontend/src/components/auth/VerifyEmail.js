@@ -21,7 +21,7 @@ const VerifyEmail = () => {
                         </div>
                         <div className="card-body">
                             <p className="text-center">
-                                Congratulations on creating your account. <br />
+                                Congratulations on creating your account! <br />
                                 You are now ready to access your account. <br />
                                 Please click the button below and procceed to logging into your account. <br />
                             </p>
