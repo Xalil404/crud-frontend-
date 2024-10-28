@@ -32,10 +32,14 @@ const Header = () => {
                             {isAuthenticated && (
                                 <>
                                     <li className="nav-item mx-2">
-                                        <Link className="nav-link active" to="/dashboard">Dashboard</Link>
+                                        <Link className="nav-link-nav active text-dark" 
+                                        style={{ marginRight: '10px', textDecoration: 'none' }}
+                                        to="/dashboard">Dashboard</Link>
                                     </li>
                                     <li className="nav-item mx-2">
-                                        <Link className="nav-link active" to="/logout">Logout</Link>
+                                        <Link className="nav-link-nav active text-dark" 
+                                        style={{ marginRight: '10px', textDecoration: 'none' }}
+                                        to="/logout">Logout</Link>
                                     </li>
                                 </>
                             )}

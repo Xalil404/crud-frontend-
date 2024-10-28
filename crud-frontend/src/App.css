@@ -64,12 +64,23 @@ h1, h2, h3, h4, h5, h6 {
 .nav-link {
     margin: 5px 0;
 }
+
+.nav-link-nav:hover {
+    background-color: #e2e6ea; /* Light gray on hover */
+    border-radius: 15px;
+    margin: 5px 0;
+    padding: 15px;
+}
   
 
 .nav-link:hover {
-    background-color: #e2e6ea; /* Light gray on hover */
+    background-image: url("https://res.cloudinary.com/dnbbm9vzi/image/upload/v1730146244/pexels-codioful-7135014_mrqqtm.jpg");
     border-radius: 15px;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
 }
+
 
 
 .divider {

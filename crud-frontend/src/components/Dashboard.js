@@ -45,7 +45,8 @@ const Dashboard = () => {
                         <h2 className="sidebar-heading text-center">Menu</h2>
                         <ul className="nav flex-column">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/dashboard">Dashboard</Link>
+                                <Link className="nav-link"
+                                 to="/dashboard">Dashboard</Link>
                             </li>
                             <hr className="divider" />
                             <li className="nav-item">
