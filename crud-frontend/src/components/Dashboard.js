@@ -91,8 +91,8 @@ const Dashboard = () => {
                         {location.pathname === '/dashboard' && (
                             <div className="row align-items-center justify-content-center" style={{ flex: 1 }}>
                                 <div className="col-md-6">
-                                    <h1 className="mb-3">Welcome to DATES!</h1>
-                                    <h6>Keep your most important birthdays, anniversaries & holidays all in one place.</h6>
+                                    <h1 className="mb-3 fw-bold">Welcome to DATES!</h1>
+                                    <h6 className="fw-bold">Keep your most important birthdays, anniversaries & holidays all in one place.</h6>
                                 </div>
                                 <div className="col-md-6 text-center">
                                     <img

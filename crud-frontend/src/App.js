@@ -13,6 +13,7 @@ import Dashboard from './components/Dashboard';
 import Anniversaries from './components/Anniversaries';
 import Holidays from './components/Holidays';
 import Logout from './components/auth/Logout'; // Import the Logout component
+import NotFound from './components/NotFound';
 import PrivateRoute from './components/auth/PrivateRoute';
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/verify-email" element={<VerifyEmail />} />
+                <Route path="*" element={<NotFound />} /> {/* Fallback route for 404 */}
                 <Route 
                     path="/birthdays" 
                     element={
