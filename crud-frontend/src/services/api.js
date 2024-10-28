@@ -207,3 +207,11 @@ export const deleteHoliday = async (holidayId, token) => {
         throw error.response.data; // Handle the error response
     }
 };
+
+
+
+
+// Function to log in using Google
+export const loginWithGoogle = () => {
+    window.location.href = `${AUTH_URL}/google/login/`; // Adjust this to match your Django endpoint for Google login
+};
