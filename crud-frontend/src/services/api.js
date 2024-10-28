@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const AUTH_URL = 'https://crud-backend-for-react-841cbc3a6949.herokuapp.com/auth'; // Authentication base URL
 const API_URL = 'https://crud-backend-for-react-841cbc3a6949.herokuapp.com/api'; // API base URL for birthdays
-const GOOGLE_AUTH_URL = 'https://crud-backend-for-react-841cbc3a6949.herokuapp.com/accounts/google/login/'; // Google login URL
 
 
 
@@ -212,7 +211,3 @@ export const deleteHoliday = async (holidayId, token) => {
 
 
 
-// Function to log in using Google
-export const loginWithGoogle = () => {
-    window.location.href = GOOGLE_AUTH_URL; // Redirect to Google login
-};

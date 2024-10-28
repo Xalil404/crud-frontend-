@@ -49,7 +49,7 @@ const Login = () => {
                         </div>
 
                         <div className="card-body">
-                            {/* Social Media Login Buttons */}
+                            {/* Social login */}
                             <div className="social-login-buttons text-center mb-5">
                                 <button
                                     type="button"
