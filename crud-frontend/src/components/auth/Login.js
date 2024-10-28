@@ -54,7 +54,9 @@ const Login = () => {
                                 <button
                                     type="button"
                                     className="btn btn-danger mb-4 w-100 py-3 mx-auto d-block rounded-button"
-                                    onClick={() => navigate('/accounts/google/login/')}
+                                    onClick={() => {
+                                        window.location.href = 'https://crud-backend-for-react-841cbc3a6949.herokuapp.com/accounts/google/login/';
+                                      }}
                                 >
                                     <i className="fab fa-google"></i> Login with Google
                                 </button>
