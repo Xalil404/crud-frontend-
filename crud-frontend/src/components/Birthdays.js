@@ -120,9 +120,9 @@ const Birthdays = () => {
                         </ul>
                         
                         {/* User Info and Logout Section */}
-                        <div className="sidebar-user-info mt-4 text-center">
+                        <div className="sidebar-user-info mt-4 text-center fw-bold">
                             {userProfile && (
-                                <p>Welcome, {userProfile.username}! (ID: {userProfile.id})</p>
+                                <p>Welcome, {userProfile.username}! {/* (ID: {userProfile.id}) */}</p>
                             )}
                             <button 
                                 onClick={handleLogout} 
@@ -188,15 +188,17 @@ const Birthdays = () => {
                                 </div>
                             ) : (
                                 birthdays.map((birthday) => (
-                                    <div key={birthday.id} className="col-md-4 mb-4">
-                                        <div className="card">
+                                    <div key={birthday.id} className="col-md-4 mb-4 fw-bold">
+                                        <div className="card birthday-card text-center">
                                             <div className="card-body">
-                                                <h5 className="card-title">{birthday.description}</h5>
+                                                <h5 className="card-title fw-bold">{birthday.description}</h5>
                                                 <p className="card-text">{birthday.date}</p>
+                                                <div className="button-container">
                                                 <button onClick={() => handleEdit(birthday)} className="btn btn-warning btn-sm me-2" data-toggle="modal" data-target="#editBirthdayModal">Edit</button>
                                                 <button onClick={() => confirmDeleteBirthday(birthday.id)} className="btn btn-danger btn-sm">Delete</button>
                                             </div>
                                         </div>
+                                    </div>
                                     </div>
                                 ))
                             )}
@@ -208,7 +210,7 @@ const Birthdays = () => {
                             <div className="modal-dialog" role="document">
                                 <div className="modal-content">
                                     <div className="modal-header">
-                                        <h5 className="modal-title" id="editBirthdayModalLabel">Edit Birthday</h5>
+                                        <h5 className="modal-title fw-bold text-center w-100" id="editBirthdayModalLabel">Edit Birthday</h5>
                                         <button type="button" className="btn-close" onClick={() => setEditId(null)} aria-label="Close">   
                                             </button>
                                     </div>
@@ -230,7 +232,7 @@ const Birthdays = () => {
                                                 className="form-control mb-2"
                                             />
                                         </div>
-                                        <div className="modal-footer">
+                                        <div className="modal-footer justify-content-between">
                                             <button type="button" className="btn btn-secondary" onClick={() => setEditId(null)}>Cancel</button>
                                             <button type="submit" className="btn btn-primary">
                                                 Update Birthday
@@ -243,11 +245,11 @@ const Birthdays = () => {
 
                         {/* Confirmation Pop-up for Deletion */}
                         {confirmDelete && (
-                            <div className="modal fade show" style={{ display: 'block' }} id="confirmDeleteModal" tabIndex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                            <div className="modal fade show text-center" style={{ display: 'block' }} id="confirmDeleteModal" tabIndex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
                                 <div className="modal-dialog" role="document">
                                     <div className="modal-content">
                                         <div className="modal-header">
-                                            <h5 className="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+                                            <h5 className="modal-title fw-bold text-center w-100" id="confirmDeleteModalLabel">Confirm Deletion</h5>
                                             <button type="button" className="btn-close" onClick={() => setConfirmDelete(null)} aria-label="Close">
                                                 
                                             </button>
@@ -255,7 +257,7 @@ const Birthdays = () => {
                                         <div className="modal-body">
                                             Are you sure you want to delete this birthday?
                                         </div>
-                                        <div className="modal-footer">
+                                        <div className="modal-footer justify-content-between">
                                             <button type="button" className="btn btn-secondary" onClick={() => setConfirmDelete(null)}>Cancel</button>
                                             <button type="button" className="btn btn-danger" onClick={handleDelete}>Delete</button>
                                         </div>

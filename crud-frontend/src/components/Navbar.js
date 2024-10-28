@@ -47,8 +47,8 @@ const Header = () => {
                         {!isAuthenticated && (
                             <>
                                 <Link
-                                    className="nav-link d-none d-lg-block text-dark"
-                                    style={{ marginRight: '10px' }}
+                                    className="nav-link-a d-none d-lg-block text-dark"
+                                    style={{ marginRight: '10px', textDecoration: 'none' }}
                                     to="/login"
                                 >
                                     Sign in

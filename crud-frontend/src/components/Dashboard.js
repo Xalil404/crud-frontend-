@@ -63,9 +63,9 @@ const Dashboard = () => {
                         </ul>
                         
                         {/* User Info and Logout Section */}
-                        <div className="sidebar-user-info mt-4 text-center">
+                        <div className="sidebar-user-info mt-4 text-center fw-bold">
                             {userProfile && (
-                                <p>Welcome, {userProfile.username}! (ID: {userProfile.id})</p>
+                                <p>Welcome, {userProfile.username}! {/* (ID: {userProfile.id}) */}</p>
                             )}
                             <button 
                                 onClick={handleLogout} 

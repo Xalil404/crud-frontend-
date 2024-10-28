@@ -116,9 +116,9 @@ const Holidays = () => {
                             </li>
                             <hr className="divider" />
                         </ul>
-                        <div className="sidebar-user-info mt-4 text-center">
+                        <div className="sidebar-user-info mt-4 text-center fw-bold">
                             {userProfile && (
-                                <p>Welcome, {userProfile.username}! (ID: {userProfile.id})</p>
+                                <p>Welcome, {userProfile.username}! {/* (ID: {userProfile.id}) */}</p>
                             )}
                             <button 
                                 onClick={handleLogout} 
@@ -193,32 +193,94 @@ const Holidays = () => {
                                 </div>
                             ) : (
                                 holidays.map((holiday) => (
-                                    <div key={holiday.id} className="col-md-4 mb-4">
-                                        <div className="card">
+                                    <div key={holiday.id} className="col-md-4 mb-4 fw-bold">
+                                        <div className="card holiday-card text-center">
                                             <div className="card-body">
-                                                <h5 className="card-title">{holiday.description}</h5>
+                                                <h5 className="card-title fw-bold">{holiday.description}</h5>
                                                 <p className="card-text">{holiday.month}/{holiday.day}</p>
+                                                <div className="button-container">
                                                 <button onClick={() => handleEdit(holiday)} className="btn btn-warning btn-sm me-2">Edit</button>
                                                 <button onClick={() => confirmDeleteHoliday(holiday.id)} className="btn btn-danger btn-sm">Delete</button>
                                             </div>
                                         </div>
                                     </div>
+                                    </div>
                                 ))
                             )}
                         </div>
 
-                        {confirmDelete && (
-                            <div className="modal fade show" style={{ display: 'block' }} id="confirmDeleteModal" tabIndex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                        {/* Edit Holiday Modal */}
+                        {editId && (
+                            <div className="modal fade show" style={{ display: 'block' }} id="editHolidayModal" tabIndex="-1" role="dialog" aria-labelledby="editHolidayModalLabel" aria-hidden="true">
                                 <div className="modal-dialog" role="document">
                                     <div className="modal-content">
                                         <div className="modal-header">
-                                            <h5 className="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+                                            <h5 className="modal-title fw-bold text-center w-100" id="editHolidayModalLabel">Edit Holiday</h5>
+                                            <button type="button" className="btn-close" onClick={() => setEditId(null)} aria-label="Close"></button>
+                                        </div>
+                                        <div className="modal-body">
+                                            <form onSubmit={handleSubmit}>
+                                                <div className="mb-2">
+                                                    <input
+                                                        type="text"
+                                                        placeholder="Description"
+                                                        value={description}
+                                                        onChange={(e) => setDescription(e.target.value)}
+                                                        required
+                                                        className="form-control"
+                                                    />
+                                                </div>
+                                                <div className="mb-2">
+                                                    <input
+                                                        type="number"
+                                                        placeholder="Month (1-12)"
+                                                        value={month}
+                                                        onChange={(e) => setMonth(e.target.value)}
+                                                        required
+                                                        className="form-control"
+                                                        min="1"
+                                                        max="12"
+                                                    />
+                                                </div>
+                                                <div className="mb-2">
+                                                    <input
+                                                        type="number"
+                                                        placeholder="Day (1-31)"
+                                                        value={day}
+                                                        onChange={(e) => setDay(e.target.value)}
+                                                        required
+                                                        className="form-control"
+                                                        min="1"
+                                                        max="31"
+                                                    />
+                                                </div>
+                                                <div className="modal-footer justify-content-between">
+                                                    <button type="button" className="btn btn-secondary" onClick={() => setEditId(null)}>Cancel</button>
+                                                    <button type="submit" className="btn btn-primary">
+                                                        Update Holiday
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+
+                        {/* Confirmation Pop-up for Deletion */}
+                        {confirmDelete && (
+                            <div className="modal fade show text-center" style={{ display: 'block' }} id="confirmDeleteModal" tabIndex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                                <div className="modal-dialog" role="document">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h5 className="modal-title fw-bold text-center w-100" id="confirmDeleteModalLabel">Confirm Deletion</h5>
                                             <button type="button" className="btn-close" onClick={() => setConfirmDelete(null)} aria-label="Close"></button>
                                         </div>
                                         <div className="modal-body">
                                             Are you sure you want to delete this holiday?
                                         </div>
-                                        <div className="modal-footer">
+                                        <div className="modal-footer justify-content-between">
                                             <button type="button" className="btn btn-secondary" onClick={() => setConfirmDelete(null)}>Cancel</button>
                                             <button type="button" className="btn btn-danger" onClick={handleDelete}>Delete</button>
                                         </div>

@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Lato', sans-serif;
 }
 
-
+/* Background image for each CRUD page */
 .dashboard-background {
     background-image: url("https://res.cloudinary.com/dnbbm9vzi/image/upload/v1729523537/pexels-codioful-7135068_el85gv.jpg");
     background-repeat: repeat;
@@ -36,6 +36,8 @@ h1, h2, h3, h4, h5, h6 {
     background-size: cover;
 }
 
+
+/* Side bar menu */
 .sidebar {
     height: 100vh;
     position: sticky;
@@ -100,3 +102,51 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
+/* Crud Card backgrounds */
+.birthday-card {
+    background-image: url("https://res.cloudinary.com/dnbbm9vzi/image/upload/v1729521385/pexels-codioful-7130498_yxghjx.jpg");
+    background-size: cover; /* Ensures the image covers the card area without stretching */
+    background-position: center; /* Centers the image within the card */
+    background-repeat: no-repeat; /* Prevents the image from tiling */
+    border-radius: 8px; /* Rounds the edges if desired */
+    overflow: hidden; /* Contains the content within the card's bounds */
+    height: 100%;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.45); /* Adds a consistent shadow */
+    transform: translateY(-5px); /* Slight lift for floating effect */
+    padding: 15px;
+}
+
+
+
+.anniversary-card {
+    background-image: url("https://res.cloudinary.com/dnbbm9vzi/image/upload/v1729523131/pexels-codioful-7135073_zxsqfx.jpg");
+    background-size: cover; /* Ensures the image covers the card area without stretching */
+    background-position: center; /* Centers the image within the card */
+    background-repeat: no-repeat; /* Prevents the image from tiling */
+    border-radius: 8px; /* Rounds the edges if desired */
+    overflow: hidden; /* Contains the content within the card's bounds */
+    height: 100%;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.45); /* Adds a consistent shadow */
+    transform: translateY(-5px); /* Slight lift for floating effect */
+    padding: 15px;
+}
+
+.holiday-card {
+    background-image: url("https://res.cloudinary.com/dnbbm9vzi/image/upload/v1729523059/pexels-codioful-7135121_k0vtmr.jpg");
+    background-size: cover; /* Ensures the image covers the card area without stretching */
+    background-position: center; /* Centers the image within the card */
+    background-repeat: no-repeat; /* Prevents the image from tiling */
+    border-radius: 8px; /* Rounds the edges if desired */
+    overflow: hidden; /* Contains the content within the card's bounds */
+    height: 100%;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.45); /* Adds a consistent shadow */
+    transform: translateY(-5px); /* Slight lift for floating effect */
+    padding: 15px;
+}
+
+/* To space out edit and delete buttons evenly in each card */
+.button-container {
+    display: flex;              /* Use flexbox */
+    justify-content: space-between; /* Space out buttons evenly */
+    margin-top: 10px;         /* Optional: Adds some spacing above the buttons */
+}

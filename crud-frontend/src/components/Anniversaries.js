@@ -113,9 +113,9 @@ const Anniversaries = () => {
                             </li>
                             <hr className="divider" />
                         </ul>
-                        <div className="sidebar-user-info mt-4 text-center">
+                        <div className="sidebar-user-info mt-4 text-center fw-bold">
                             {userProfile && (
-                                <p>Welcome, {userProfile.username}! (ID: {userProfile.id})</p>
+                                <p>Welcome, {userProfile.username}! {/* (ID: {userProfile.id}) */}</p>
                             )}
                             <button 
                                 onClick={handleLogout} 
@@ -175,33 +175,74 @@ const Anniversaries = () => {
                                 </div>
                             ) : (
                                 anniversaries.map((anniversary) => (
-                                    <div key={anniversary.id} className="col-md-4 mb-4">
-                                        <div className="card">
+                                    <div key={anniversary.id} className="col-md-4 mb-4 fw-bold">
+                                        <div className="card anniversary-card text-center">
                                             <div className="card-body">
-                                                <h5 className="card-title">{anniversary.description}</h5>
+                                                <h5 className="card-title fw-bold">{anniversary.description}</h5>
                                                 <p className="card-text">{anniversary.date}</p>
+                                                <div className="button-container">
                                                 <button onClick={() => handleEdit(anniversary)} className="btn btn-warning btn-sm me-2" data-toggle="modal" data-target="#editAnniversaryModal">Edit</button>
                                                 <button onClick={() => confirmDeleteAnniversary(anniversary.id)} className="btn btn-danger btn-sm">Delete</button>
                                             </div>
                                         </div>
                                     </div>
+                                    </div>
                                 ))
                             )}
                         </div>
 
+                        {/* Edit Anniversary Modal */}
+                        <div className={`modal fade ${editId ? 'show' : ''}`} style={{ display: editId ? 'block' : 'none' }} id="editAnniversaryModal" tabIndex="-1" role="dialog" aria-labelledby="editAnniversaryModalLabel" aria-hidden={!editId}>
+                            <div className="modal-dialog" role="document">
+                                <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h5 className="modal-title fw-bold text-center w-100" id="editAnniversaryModalLabel">Edit Anniversary</h5>
+                                        <button type="button" className="btn-close" onClick={() => setEditId(null)} aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <form onSubmit={handleSubmit}>
+                                        <div className="modal-body">
+                                            <input
+                                                type="text"
+                                                placeholder="Description"
+                                                value={name}
+                                                onChange={(e) => setName(e.target.value)}
+                                                required
+                                                className="form-control mb-2"
+                                            />
+                                            <input
+                                                type="date"
+                                                value={date}
+                                                onChange={(e) => setDate(e.target.value)}
+                                                required
+                                                className="form-control mb-2"
+                                            />
+                                        </div>
+                                        <div className="modal-footer justify-content-between">
+                                            <button type="button" className="btn btn-secondary" onClick={() => setEditId(null)}>Cancel</button>
+                                            <button type="submit" className="btn btn-primary">
+                                                Update Anniversary
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Confirmation Pop-up for Deletion */}
                         {confirmDelete && (
-                            <div className="modal fade show" style={{ display: 'block' }} id="confirmDeleteModal" tabIndex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                            <div className="modal fade show text-center" style={{ display: 'block' }} id="confirmDeleteModal" tabIndex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
                                 <div className="modal-dialog" role="document">
                                     <div className="modal-content">
                                         <div className="modal-header">
-                                            <h5 className="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+                                            <h5 className="modal-title fw-bold text-center w-100" id="confirmDeleteModalLabel">Confirm Deletion</h5>
                                             <button type="button" className="btn-close" onClick={() => setConfirmDelete(null)} aria-label="Close">
                                             </button>
                                         </div>
                                         <div className="modal-body">
                                             Are you sure you want to delete this anniversary?
                                         </div>
-                                        <div className="modal-footer">
+                                        <div className="modal-footer justify-content-between">
                                             <button type="button" className="btn btn-secondary" onClick={() => setConfirmDelete(null)}>Cancel</button>
                                             <button type="button" className="btn btn-danger" onClick={handleDelete}>Delete</button>
                                         </div>
