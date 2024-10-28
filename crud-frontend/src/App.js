@@ -10,6 +10,8 @@ import Register from './components/auth/Register';
 import VerifyEmail from './components/auth/VerifyEmail';
 import Birthdays from './components/Birthdays';
 import Dashboard from './components/Dashboard';
+import Anniversaries from './components/Anniversaries';
+import Holidays from './components/Holidays';
 import Logout from './components/auth/Logout'; // Import the Logout component
 import PrivateRoute from './components/auth/PrivateRoute';
 
@@ -43,6 +45,22 @@ const App = () => {
                     element={
                         <PrivateRoute>
                             <Dashboard />
+                        </PrivateRoute>
+                    } 
+                /> 
+                <Route 
+                    path="/anniversaries" 
+                    element={
+                        <PrivateRoute>
+                            <Anniversaries />
+                        </PrivateRoute>
+                    } 
+                /> 
+                <Route 
+                    path="/holidays" 
+                    element={
+                        <PrivateRoute>
+                            <Holidays />
                         </PrivateRoute>
                     } 
                 /> 

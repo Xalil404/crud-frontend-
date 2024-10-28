@@ -10,6 +10,18 @@
     background-size: cover;
 }
 
+.dashboard-background-anniversary {
+    background-image: url("https://res.cloudinary.com/dnbbm9vzi/image/upload/v1729523131/pexels-codioful-7135073_zxsqfx.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.dashboard-background-holiday {
+    background-image: url("https://res.cloudinary.com/dnbbm9vzi/image/upload/v1729523059/pexels-codioful-7135121_k0vtmr.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+}
+
 .sidebar {
     height: 100vh;
     position: sticky;

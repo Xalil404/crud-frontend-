@@ -52,6 +52,14 @@ const Dashboard = () => {
                                 <Link className="nav-link" to="/birthdays">Birthdays</Link>
                             </li>
                             <hr className="divider" />
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/anniversaries">Anniversaries</Link>
+                            </li>
+                            <hr className="divider" />
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/holidays">Holidays</Link>
+                            </li>
+                            <hr className="divider" />
                         </ul>
                         
                         {/* User Info and Logout Section */}

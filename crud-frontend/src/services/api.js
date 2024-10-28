@@ -108,3 +108,102 @@ export const fetchUserProfile = async (token) => {
         throw error.response.data; // Handle the error response
     }
 };
+
+
+// Function to fetch anniversaries
+export const fetchAnniversaries = async (token) => {
+    try {
+        const response = await axios.get(`${API_URL}/anniversaries/`, {
+            headers: { Authorization: `Token ${token}` }
+        });
+        return response.data; // Returns the list of anniversaries
+    } catch (error) {
+        throw error.response.data; // Handle the error response
+    }
+};
+
+// Function to create a new anniversary
+export const createAnniversary = async (anniversaryData, token) => {
+    try {
+        const response = await axios.post(`${API_URL}/anniversaries/`, anniversaryData, {
+            headers: { Authorization: `Token ${token}` }
+        });
+        return response.data; // Returns the created anniversary data
+    } catch (error) {
+        throw error.response.data; // Handle the error response
+    }
+};
+
+// Function to update an anniversary
+export const updateAnniversary = async (anniversaryId, anniversaryData, token) => {
+    try {
+        const response = await axios.put(`${API_URL}/anniversaries/${anniversaryId}/`, anniversaryData, {
+            headers: { Authorization: `Token ${token}` }
+        });
+        return response.data; // Returns the updated anniversary data
+    } catch (error) {
+        throw error.response.data; // Handle the error response
+    }
+};
+
+// Function to delete an anniversary
+export const deleteAnniversary = async (anniversaryId, token) => {
+    try {
+        const response = await axios.delete(`${API_URL}/anniversaries/${anniversaryId}/`, {
+            headers: { Authorization: `Token ${token}` }
+        });
+        return response.data; // Optionally return a success message or response
+    } catch (error) {
+        throw error.response.data; // Handle the error response
+    }
+};
+
+
+// Function to fetch holidays
+export const fetchHolidays = async (token) => {
+    try {
+        const response = await axios.get(`${API_URL}/holidays/`, {
+            headers: { Authorization: `Token ${token}` }
+        });
+        return response.data; // Returns the list of holidays
+    } catch (error) {
+        throw error.response.data; // Handle the error response
+    }
+};
+
+// Function to create a new holiday
+export const createHoliday = async (holidayData, token) => {
+    try {
+        const response = await axios.post(`${API_URL}/holidays/`, holidayData, {
+            headers: { Authorization: `Token ${token}` }
+        });
+        return response.data; // Returns the created holiday data
+    } catch (error) {
+        throw error.response.data; // Handle the error response
+    }
+};
+
+// Function to update a holiday
+export const updateHoliday = async (holidayId, holidayData, token) => {
+    try {
+        const response = await axios.put(`${API_URL}/holidays/${holidayId}/`, holidayData, {
+            headers: { Authorization: `Token ${token}` }
+        });
+        return response.data; // Returns the updated holiday data
+    } catch (error) {
+        throw error.response.data; // Handle the error response
+    }
+};
+
+
+// Function to delete a holiday
+export const deleteHoliday = async (holidayId, token) => {
+    try {
+        const response = await axios.delete(`${API_URL}/holidays/${holidayId}/`, {
+            headers: { Authorization: `Token ${token}` }
+        });
+        return response.data; // Optionally return a success message or response
+    } catch (error) {
+        throw error.response.data; // Handle the error response
+    }
+};
