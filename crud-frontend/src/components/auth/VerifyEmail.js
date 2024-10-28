@@ -17,7 +17,7 @@ const VerifyEmail = () => {
                 <div className="col-md-6">
                     <div className="card" style={{ border: 'none' }}>
                         <div className="card-header text-center" style={{ backgroundColor: '#E8BF73', color: 'black' }}>
-                            <h1>Verify Your Email Address</h1>
+                            <h1>CONGRATS - You're In!</h1>
                         </div>
                         <div className="card-body">
                             <p className="text-center">
