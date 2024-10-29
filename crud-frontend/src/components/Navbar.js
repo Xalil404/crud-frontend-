@@ -58,6 +58,13 @@ const Header = () => {
                                     Sign in
                                 </Link>
                                 <Link
+                                    className="nav-link-a d-none d-lg-block text-dark"
+                                    style={{ marginRight: '10px', textDecoration: 'none' }}
+                                    to="/google-login" // Adjust this to the path of your Google login page
+                                >
+                                    Sign in with Google
+                                </Link>
+                                <Link
                                     className="nav-link btn btn-sm rounded-pill px-4"
                                     style={{
                                         backgroundColor: '#E8BF73',

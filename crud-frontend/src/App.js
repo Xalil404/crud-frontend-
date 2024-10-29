@@ -16,6 +16,8 @@ import Logout from './components/auth/Logout'; // Import the Logout component
 import NotFound from './components/NotFound';
 import PrivateRoute from './components/auth/PrivateRoute';
 
+import GoogleLoginPage from './components/auth/GoogleLoginPage';
+
 const App = () => {
     return (
         <Router>
@@ -26,6 +28,7 @@ const App = () => {
                 <Route path="/register" element={<Register />} />
                 <Route path="/verify-email" element={<VerifyEmail />} />
                 <Route path="*" element={<NotFound />} /> {/* Fallback route for 404 */}
+                <Route path="/google-login" element={<GoogleLoginPage />} />
                 <Route 
                     path="/birthdays" 
                     element={
