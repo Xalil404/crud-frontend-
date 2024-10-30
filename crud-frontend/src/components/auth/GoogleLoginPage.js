@@ -11,7 +11,7 @@ const GoogleLoginPage = () => {
         };
 
         // Send token to your Django backend
-        fetch('http://127.0.0.1:8000/api/auth/google/', {
+        fetch('https://crud-backend-for-react-841cbc3a6949.herokuapp.com/api/auth/google/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
