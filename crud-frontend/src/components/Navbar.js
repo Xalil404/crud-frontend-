@@ -57,6 +57,7 @@ const Header = () => {
                                 >
                                     Sign in
                                 </Link>
+                                {/* 
                                 <Link
                                     className="nav-link-a d-none d-lg-block text-dark"
                                     style={{ marginRight: '10px', textDecoration: 'none' }}
@@ -64,6 +65,7 @@ const Header = () => {
                                 >
                                     Sign in with Google
                                 </Link>
+                                */}
                                 <Link
                                     className="nav-link btn btn-sm rounded-pill px-4"
                                     style={{
