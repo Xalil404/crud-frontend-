@@ -209,24 +209,6 @@ export const deleteHoliday = async (holidayId, token) => {
 };
 
 
-// Function to submit the contact form data
-export const submitContactForm = async (formData) => {
-    try {
-        // Optional: You may want to add CSRF handling if you're working with Django and need CSRF protection
-        const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value; // Get CSRF token from the page
-
-        const response = await axios.post(`${API_URL}/contact/`, formData, {
-            headers: {
-                'X-CSRFToken': csrfToken, // Include CSRF token if needed
-                'Content-Type': 'application/json', // Ensure content type is JSON
-            },
-        });
-
-        return response.data; // Return the response data after successful submission
-    } catch (error) {
-        throw error.response.data; // Handle and throw any errors (e.g., validation errors or API issues)
-    }
-};
 
 
 

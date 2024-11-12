@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { submitContactForm } from '../services/api'; // Import the function to submit the contact form
+import axios from 'axios';
+import { Link } from 'react-router-dom'; 
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -8,7 +9,6 @@ const ContactForm = () => {
         username: '',
         message: '',
     });
-
     const [error, setError] = useState('');
     const [success, setSuccess] = useState('');
 
@@ -21,17 +21,19 @@ const ContactForm = () => {
         }));
     };
 
-    // Submit form data
+    // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError(''); // Reset any previous error
+        setError(''); // Reset error
         setSuccess(''); // Reset success message
 
         try {
-            // Call the API to submit the form
-            await submitContactForm(formData);
+            const response = await axios.post('https://crud-backend-for-react-841cbc3a6949.herokuapp.com/api/contact/', formData, {
+                headers: {
+                    'Content-Type': 'application/json', // Ensure content type is JSON
+                },
+            });
 
-            // If the response is successful, show a success message
             setSuccess('Message sent successfully!');
             setFormData({
                 inquiry_type: 'general_inquiry',
@@ -40,14 +42,13 @@ const ContactForm = () => {
                 message: '',
             });
         } catch (err) {
-            // Handle error (e.g., validation errors or API issues)
             setError('There was an issue sending your message. Please try again later.');
         }
     };
 
     return (
         <div className="container mt-5 mb-5">
-            <h1 className="text-center pb-3">Contact Us</h1>
+            <h1 className="text-center pb-3">Contact Us @ Dates</h1>
             <p className="text-center pb-3">
                 If you have any questions or inquiries, feel free to reach out to us using the form below.
             </p>
@@ -116,6 +117,12 @@ const ContactForm = () => {
                             <button type="submit" className="btn btn-dark mx-auto d-block">
                                 Submit
                             </button>
+                            {/* Home Button */}
+                            <div className="mt-5">
+                                <Link to="/" className="btn btn-secondary mx-auto d-block w-50">
+                                    Back to Home Page
+                                </Link>
+                            </div>
                         </div>
                     </form>
                 </div>
