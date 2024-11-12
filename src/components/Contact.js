@@ -29,7 +29,7 @@ const ContactForm = () => {
 
         try {
             // Call the API to submit the form
-            const response = await submitContactForm(formData);
+            await submitContactForm(formData);
 
             // If the response is successful, show a success message
             setSuccess('Message sent successfully!');
